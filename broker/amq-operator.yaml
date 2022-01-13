@@ -1,0 +1,25 @@
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: amq-broker-rhel8
+  namespace: amq-mqtt
+spec:
+  targetNamespaces:
+  - amq-mqtt
+
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: amq-broker-rhel8
+  namespace: amq-mqtt
+  labels:
+    operators.coreos.com/amq-broker-rhel8.amq-mqtt: ''
+spec:
+  channel: 7.x
+  installPlanApproval: Automatic
+  name: amq-broker-rhel8
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: amq-broker-operator.v7.9.1-opr-2
