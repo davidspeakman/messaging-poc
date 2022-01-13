@@ -11,7 +11,9 @@ public class ActiveMqRoute extends EndpointRouteBuilder {
     public void configure() throws Exception {
 
         from(activemq("topic:pubsub.topic1")).routeId("ActiveMQ")
-                .log("${body}");
+                .log("${body}")
+                .setBody(simple("${body} + ' + response'"))
+                .to(activemq("topic:pubsub.topic2"));
     }
 
 }

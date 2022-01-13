@@ -25,22 +25,28 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>${quarkus.platform.group-id}</groupId>
+                <artifactId>quarkus-camel-bom</artifactId>
+                <version>${quarkus.platform.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.apache.camel.quarkus</groupId>-->
-<!--            <artifactId>camel-quarkus-paho</artifactId>-->
-<!--        </dependency>-->
         <dependency>
-            <groupId>org.eclipse.paho</groupId>
-            <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
-            <version>1.2.5</version>
+            <groupId>org.apache.camel.quarkus</groupId>
+            <artifactId>camel-quarkus-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.fusesource.mqtt-client</groupId>
-            <artifactId>mqtt-client</artifactId>
-            <version>1.12</version>
+            <groupId>org.apache.camel.quarkus</groupId>
+            <artifactId>camel-quarkus-paho</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel.quarkus</groupId>
+            <artifactId>camel-quarkus-timer</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
