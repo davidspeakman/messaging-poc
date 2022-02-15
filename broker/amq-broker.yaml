@@ -13,7 +13,7 @@ spec:
       anycastPrefix: jms.queue.
       verifyHost: false
     - name: mqtt
-      protocols: mqtt
+      protocols: mqtt,jms
       port: 8883
       sslEnabled: true
       sslSecret: amq-mqtt-mqtt-secret

@@ -17,7 +17,7 @@ public class MqttConsumerRoute extends EndpointRouteBuilder {
         properties.setProperty("com.ibm.ssl.keyStore", "C:\\dev\\aroCluster\\poc\\messaging-poc\\client.ks");
         properties.setProperty("com.ibm.ssl.keyStorePassword", "aropoc");
 
-        from(paho("pubsub.topic2").clientId("mqtt-consumer").cleanSession(true).sslClientProps(properties)).routeId("Consumer")
+        from(paho("goc_cpc.stg.apps.dia.notifications.purequest.pdt.wc.wc1234.route.r1234.puassign").clientId("mqtt-consumer").cleanSession(true).sslClientProps(properties)).routeId("Consumer")
                 .log("${body}");
     }
 

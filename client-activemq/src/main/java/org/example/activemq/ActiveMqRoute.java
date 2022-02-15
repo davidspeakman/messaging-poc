@@ -10,10 +10,10 @@ public class ActiveMqRoute extends EndpointRouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        from(activemq("topic:pubsub.topic1")).routeId("ActiveMQ")
+        from(activemq("topic:goc_cpc.stg.apps.dia.events.newstop.item.wc.wc1234.route.r1234")).routeId("ActiveMQ")
                 .log("${body}")
                 .setBody(simple("${body} + ' + response'"))
-                .to(activemq("topic:pubsub.topic2"));
+                .to(activemq("topic:goc_cpc.stg.apps.dia.notifications.purequest.pdt.wc.wc1234.route.r1234.puassign"));
     }
 
 }
